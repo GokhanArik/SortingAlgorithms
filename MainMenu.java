@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class MainMenu{
     
@@ -9,24 +10,34 @@ public class MainMenu{
         int mArray[] = new int[]{5,2,4,12,4,3,7,8,9,5};
         int algo = 0;
         
-        Sort sort;
+        Sort mSort;
         
-        printSortingAlgorithms();
-        System.out.println("Please make your selection:");
-        algo = in.nextInt();
-              
-        switch( algo ){
-            
-            case 1:
-                sort = new InsertionSort( mArray );
-                            
+        do{
+            System.out.println("\nRandom test array: " + Arrays.toString(mArray) );
+            printSortingAlgorithms();
+            System.out.print("Please make your selection:");
+            algo = in.nextInt(); 
+            System.out.println();
+            switch( algo ){
+
+                case 0:
+                    System.exit(0);
+                    break;
+                case 1:
+                    mSort = new InsertionSort();
+                    mSort.sort( mArray );
+
+                    break;
+             }
         }
+        while( algo > 0);
+
        
     }  
 
     public static void printSortingAlgorithms(){
         
-        System.out.println("Sorting Algorithms");
+        System.out.println("\nSorting Algorithms");
         System.out.println("\t1. Insertion Sort");    
     }
 }
