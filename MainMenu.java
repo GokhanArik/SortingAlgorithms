@@ -78,7 +78,7 @@ public class MainMenu{
         System.out.println("\t4. Merge Sort");
         System.out.println("\t5. Quick Sort");
         System.out.println("\t6. Selection Sort");
-        System.out.println("\t0. Exit");
+        System.out.println("\t0. Quit");
     }
 }
 
