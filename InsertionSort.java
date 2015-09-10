@@ -4,7 +4,6 @@ public class InsertionSort extends Sort{
 
     @Override
     public void sort( int[] mArray ){
-        
         int key;
         int i;
         int j;
