@@ -74,10 +74,10 @@ public class MainMenu{
         System.out.println("\nSorting Algorithms");
         System.out.println("\t1. Bubble Sort");
         System.out.println("\t2. Bucket Sort");
-        System.out.println("\t3. Insertion Sort");
+        System.out.println("\t3. Insertion Sort\t: O(n^2) -> Average and Worst Case");
         System.out.println("\t4. Merge Sort");
         System.out.println("\t5. Quick Sort");
-        System.out.println("\t6. Selection Sort");
+        System.out.println("\t6. Selection Sort\t: O(n^2) -> Average and Worst Case");
         System.out.println("\t0. Quit");
     }
 }
