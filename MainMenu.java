@@ -84,7 +84,7 @@ public class MainMenu{
     private static int[] initializeArray(int arraySize){
         int[] mArray = new int[0];
         try {
-            Scanner scanner = new Scanner(new File( arraySize + ".txt"));
+            Scanner scanner = new Scanner(new File( "arrays/" + arraySize + ".txt"));
 
             mArray = new int[arraySize];
             int i = 0;
