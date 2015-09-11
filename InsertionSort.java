@@ -1,9 +1,7 @@
-import java.util.Arrays;
-
-public class InsertionSort extends Sort{ 
+public class InsertionSort extends Sort{
 
     @Override
-    public void sort( int[] mArray ){
+    public void processSort(int[] mArray){
         int key;
         int i;
         int j;

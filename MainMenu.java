@@ -1,4 +1,7 @@
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -16,21 +19,28 @@ public class MainMenu{
     public static void main (String[] args){
 
         Scanner in = new Scanner(System.in);
-        int algo = 0;
-
+        int algorithm;
+        int arraySize = 0;
+        int [] mArray = new int[0];
         Sort mSort;
 
         do{
-            int mArray[] = new int[]{5,2,4,12,4,3,7,8,9,5};
-            System.out.println("\nRandom test array: " + Arrays.toString(mArray) );
+        //    int mArray[] = new int[]{5,2,4,12,4,3,7,8,9,5};
+            if (arraySize == 0) {
+                System.out.print("\nEnter array size (10, 100, 1 000, 10 000, 50 000): ");
+                arraySize = in.nextInt();
+            }
+            mArray = initializeArray(arraySize);
+    //        System.out.println("\nArray: " + Arrays.toString(mArray));
             printSortingAlgorithms();
             System.out.print("\nPlease make your selection: ");
-            algo = in.nextInt(); 
+            algorithm = in.nextInt();
             System.out.println();
 
             long startTime = System.nanoTime();
+            long miliStart = System.currentTimeMillis();
 
-            switch( algo ){
+            switch( algorithm ){
 
                 case 0:
                     System.exit(0);
@@ -62,22 +72,39 @@ public class MainMenu{
             }
 
             long elapsedTime = System.nanoTime() - startTime;
+            long miliElapsed = System.currentTimeMillis() - miliStart;
             System.out.println(ANSI_RED + "> Execution time in micro seconds: " + (double) NANOSECONDS.toMicros(elapsedTime) + ANSI_RESET);
+            System.out.println(ANSI_BLUE + "> Execution time in mili seconds: " + miliElapsed + ANSI_RESET);
         }
-        while( algo > 0);
+        while( algorithm > 0);
 
 
     }  
 
+    private static int[] initializeArray(int arraySize){
+        int[] mArray = new int[0];
+        try {
+            Scanner scanner = new Scanner(new File( arraySize + ".txt"));
+
+            mArray = new int[arraySize];
+            int i = 0;
+            while(scanner.hasNextInt()){
+                mArray[i++] = scanner.nextInt();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return mArray;
+    }
     public static void printSortingAlgorithms(){
 
         System.out.println("\nSorting Algorithms");
         System.out.println("\t1. Bubble Sort");
         System.out.println("\t2. Bucket Sort");
-        System.out.println("\t3. Insertion Sort\t: O(n^2) -> Average and Worst Case");
+        System.out.println("\t3. Insertion Sort\t: Average -> O(n^2) \t\t Worst -> O(n^2) \t\t Memory -> O(1)");
         System.out.println("\t4. Merge Sort");
-        System.out.println("\t5. Quick Sort");
-        System.out.println("\t6. Selection Sort\t: O(n^2) -> Average and Worst Case");
+        System.out.println("\t5. Quick Sort\t\t: Average -> O(n log(n)) \t Worst -> O(n^2) \t\t Memory -> O(log(n))");
+        System.out.println("\t6. Selection Sort\t: Average -> O(n^2) \t\t Worst -> O(n^2) \t\t Memory -> O(1)");
         System.out.println("\t0. Quit");
     }
 }

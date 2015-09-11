@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MergeSort extends Sort{ 
 
-    public void sort( int[] mArray ){
+    public void processSort(int[] mArray){
 
         printSortedArray(mArray);
     }   

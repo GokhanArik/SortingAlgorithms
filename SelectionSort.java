@@ -1,16 +1,8 @@
-import java.util.Arrays;
-
-public class SelectionSort extends Sort{ 
+public class SelectionSort extends Sort{
 
     @Override
-    public void sort( int[] mArray ){
-        
-        if (mArray.length == 0){
-            System.out.println("Array is empty.");
-            return;
-        }
-
-        int min; 
+    public void processSort(int[] mArray){
+        int min;
         int i, j;
 
         for (i=0; i < mArray.length-1; i++){
