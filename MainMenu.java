@@ -99,10 +99,10 @@ public class MainMenu{
     public static void printSortingAlgorithms(){
 
         System.out.println("\nSorting Algorithms");
-        System.out.println("\t1. Bubble Sort");
-        System.out.println("\t2. Bucket Sort");
+        System.out.println("\t1. Bubble Sort\t\t: Average -> O(n^2) \t\t Worst -> O(n^2) \t\t Memory -> O(1)");
+        System.out.println("\t2. Bucket Sort\t\t:");
         System.out.println("\t3. Insertion Sort\t: Average -> O(n^2) \t\t Worst -> O(n^2) \t\t Memory -> O(1)");
-        System.out.println("\t4. Merge Sort");
+        System.out.println("\t4. Merge Sort\t\t: Average -> O(n log(n)) \t Worst -> O(n log(n)) \t Memory -> ?");
         System.out.println("\t5. Quick Sort\t\t: Average -> O(n log(n)) \t Worst -> O(n^2) \t\t Memory -> O(log(n))");
         System.out.println("\t6. Selection Sort\t: Average -> O(n^2) \t\t Worst -> O(n^2) \t\t Memory -> O(1)");
         System.out.println("\t0. Quit");

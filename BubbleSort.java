@@ -7,8 +7,8 @@ public class BubbleSort extends Sort{
 
         while(swapped){
             swapped = false;
-            for(int i=0; i < mArray.length; i++){
-                if(mArray[i] < mArray[i+1]){
+            for(int i=0; i < mArray.length-1; i++){
+                if(mArray[i] > mArray[i+1]){
                     temp = mArray[i];
                     mArray[i] = mArray[i+1];
                     mArray[i+1] = temp;
